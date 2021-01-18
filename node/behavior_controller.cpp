@@ -51,7 +51,7 @@ private:
     int random_walk_button_idx;
     int brake_button_idx;
     int nav_button_idx;
-    int test_button
+    int test_button;
     // ***Add button index for new planner here***
     // int new_button_idx;
 
@@ -314,13 +314,6 @@ public:
         } else if (msg.buttons[nav_button_idx]) {
             // nav
             toggle_mux(nav_mux_idx, "Navigation");
-        }
-        //Unsure if I did this right V
-        void test_callback(const std_msgs::Bool & msg) {
-        // ***Test Node -Andrew***
-        if (msg.buttons[test_button_idx]) {
-        //  // new planner
-        toggle_mux(test_mux_idx, "Test Planner");
         }
         
         // ***Add new else if statement here for new planning method***
