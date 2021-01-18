@@ -123,6 +123,14 @@ public:
         n.getParam("nav_mux_idx", nav_mux_idx);
         add_channel(nav_drive_topic, drive_topic, nav_mux_idx);
 
+        
+        // ***Test channel to se what this is -Andrew /Tutorial#2 lecture 1/**
+        int test_mux_idx;
+        std::string test_drive_topic;
+        n.getParam("test_drive_topic", test_drive_topic);
+        n.getParam("test_mux_idx", test_mux_idx);
+        add_channel(test_drive_topic, drive_topic, test_mux_idx);
+        
         // ***Add a channel for a new planner here**
         // int new_mux_idx;
         // std::string new_drive_topic;
