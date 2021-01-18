@@ -51,6 +51,7 @@ private:
     int random_walk_button_idx;
     int brake_button_idx;
     int nav_button_idx;
+    int test_button
     // ***Add button index for new planner here***
     // int new_button_idx;
 
@@ -126,6 +127,7 @@ public:
         n.getParam("random_walk_button_idx", random_walk_button_idx);
         n.getParam("brake_button_idx", brake_button_idx);
         n.getParam("nav_button_idx", nav_button_idx);
+        n.getParam("test_button_idx",test_button_idx);
         // ***Add button index for new planner here***
         // n.getParam("new_button_idx", new_button_idx);
 
@@ -135,6 +137,7 @@ public:
         n.getParam("random_walk_key_char", random_walk_key_char);
         n.getParam("brake_key_char", brake_key_char);
         n.getParam("nav_key_char", nav_key_char);
+        n.getParam("test_key_char",test_key_char);
         // ***Add key char for new planner here***
         // n.getParam("new_key_char", new_key_char);
 
@@ -312,6 +315,14 @@ public:
             // nav
             toggle_mux(nav_mux_idx, "Navigation");
         }
+        //Unsure if I did this right V
+        void test_callback(const std_msgs::Bool & msg) {
+        // ***Test Node -Andrew***
+        if (msg.buttons[test_button_idx]) {
+        //  // new planner
+        toggle_mux(test_mux_idx, "Test Planner");
+        }
+        
         // ***Add new else if statement here for new planning method***
         // if (msg.buttons[new_button_idx]) {
         //  // new planner
