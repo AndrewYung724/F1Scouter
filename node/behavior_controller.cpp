@@ -149,7 +149,7 @@ public:
         }
 
         // Start with ebrake off
-        safety_on = false;
+        safety_on = True;
 
         // Initialize state
         state = {.x=0.0, .y=0.0, .theta=0.0, .velocity=0.0, .steer_angle=0.0, .angular_velocity=0.0, .slip_angle=0.0, .st_dyn=false};
@@ -265,7 +265,7 @@ public:
     }
 
     void toggle_brake_mux() {
-        ROS_INFO_STREAM("Emergency brake engaged");
+        ROS_INFO_STREAM("Emergency brake engaged!!");
         // turn everything off
         for (int i = 0; i < mux_size; i++) {
             mux_controller[i] = false;
@@ -289,19 +289,19 @@ public:
 
     void joy_callback(const sensor_msgs::Joy & msg) {
         // Changing mux_controller:
-        if (msg.buttons[joy_button_idx]) { 
-            // joystick
-            toggle_mux(joy_mux_idx, "Joystick");
-        }
-        if (msg.buttons[key_button_idx]) { 
-            // keyboard
-            toggle_mux(key_mux_idx, "Keyboard");
-        }
-        else if (msg.buttons[brake_button_idx]) { 
+            if (msg.buttons[joy_button_idx]) { 
+                // joystick
+                toggle_mux(joy_mux_idx, "Joystick");
+            }
+            if (msg.buttons[key_button_idx]) { 
+                // keyboard
+                toggle_mux(key_mux_idx, "Keyboard");
+            }
+            else if (msg.buttons[brake_button_idx]) { 
             // emergency brake 
-            if (safety_on) {
-                ROS_INFO("Emergency brake turned off");
-                safety_on = false;
+                if (safety_on) {
+                    ROS_INFO("Emergency brake turned off");
+                    safety_on = false;
             }
             else {
                 ROS_INFO("Emergency brake turned on");
