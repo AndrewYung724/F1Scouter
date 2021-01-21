@@ -137,7 +137,7 @@ public:
         n.getParam("random_walk_key_char", random_walk_key_char);
         n.getParam("brake_key_char", brake_key_char);
         n.getParam("nav_key_char", nav_key_char);
-        n.getParam("test_key_char",test_key_char);
+        //n.getParam("test_key_char",test_key_char);
         // ***Add key char for new planner here***
         // n.getParam("new_key_char", new_key_char);
 
@@ -149,7 +149,7 @@ public:
         }
 
         // Start with ebrake off
-        safety_on = True;
+        safety_on = true;
 
         // Initialize state
         state = {.x=0.0, .y=0.0, .theta=0.0, .velocity=0.0, .steer_angle=0.0, .angular_velocity=0.0, .slip_angle=0.0, .st_dyn=false};
