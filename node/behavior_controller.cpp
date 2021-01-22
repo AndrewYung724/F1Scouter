@@ -127,7 +127,7 @@ public:
         n.getParam("random_walk_button_idx", random_walk_button_idx);
         n.getParam("brake_button_idx", brake_button_idx);
         n.getParam("nav_button_idx", nav_button_idx);
-        n.getParam("test_button_idx",test_button_idx);
+        //n.getParam("test_button_idx",test_button_idx);
         // ***Add button index for new planner here***
         // n.getParam("new_button_idx", new_button_idx);
 
