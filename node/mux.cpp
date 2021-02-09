@@ -239,6 +239,31 @@ public:
                 prev_key_velocity = desired_velocity;
             }
         }
+        
+        
+        
+        // we can delete this later if we need to 
+        
+        void brake_callback(const sensor_msgs::Joy & msg) { // change const stuff
+            
+            if (mux_controller[brake_mux_idx]) {
+                
+                
+                // how do we call the "function" from safety_node.cpp ??
+
+                publish_to_drive(desired_velocity, desired_steer); // what is this???
+            }
+        }
+
+        // this part ^
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
 
