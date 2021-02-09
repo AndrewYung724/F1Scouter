@@ -36,7 +36,7 @@
   </node>
   
   <!-- **Launch Braking node-->
-  <node pkg="f1tenth_simulator" name="safety_node" type="safety_node" output="screen">
+  <node pkg="f1tenth_simulator" name="safety_node" type="safety_node.cpp" output="screen">
      <rosparam command="load" file="$(find f1tenth_simulator)/params.yaml"/>
   </node>
   
