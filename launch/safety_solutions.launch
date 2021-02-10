@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Listen to messages from joysicks -->
+  <node pkg="safety_solutions" name="safety_node" type="safety_node"/>
+  
+  <!-- launch a static tf from /laser to /center -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="laser_to_center" args="-0.1375 0.0 0.0 0.0 0.0 0.0 1.0 /laser /center" />
+</launch>
