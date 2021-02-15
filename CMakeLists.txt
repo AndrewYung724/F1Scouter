@@ -45,6 +45,8 @@ if(DEFINED CATKIN_DEVEL_PREFIX)
   find_package(catkin REQUIRED COMPONENTS
     roslib
     roscpp
+    rospy
+    tf
     tf2
     tf2_ros
     tf2_geometry_msgs
@@ -52,7 +54,9 @@ if(DEFINED CATKIN_DEVEL_PREFIX)
     nav_msgs
     sensor_msgs
     geometry_msgs
-
+    laser_geometry
+    angles
+    
     interactive_markers
     visualization_msgs
 
